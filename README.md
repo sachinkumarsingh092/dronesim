@@ -14,7 +14,7 @@ Raw drone footage:
 
 ## Output
 
-Cartoon re-skin — vehicles are tracked, erased, and replaced with stickers:
+Cartoon re-skin: vehicles are tracked, erased, and replaced with stickers:
 
 ![output](assets/demo.gif)
 
