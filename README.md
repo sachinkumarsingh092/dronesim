@@ -8,11 +8,17 @@ background is left untouched. All GPU work runs on [Modal](https://modal.com).
 median-plate inpaint (erase the originals) → TIPSv2 zero-shot road mask. (The earlier
 `reskin.py` uses GroundingDINO + SAM2 + ControlNet img2img instead.)
 
-## Demo
+## Input
 
-| Input (drone footage) | Output (cartoon re-skin) |
-|---|---|
-| ![input](assets/input.jpg) | ![demo](assets/demo.gif) |
+Raw drone footage (`data/clips/aerial_scene2.mp4`):
+
+![input](assets/input.gif)
+
+## Output
+
+Cartoon re-skin — vehicles are tracked, erased, and replaced with stickers:
+
+![output](assets/demo.gif)
 
 ## Setup
 
