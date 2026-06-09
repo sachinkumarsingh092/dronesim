@@ -51,7 +51,9 @@ def detect_segment(img_bytes: bytes, prompt: str) -> bytes:
 
 @app.local_entrypoint()
 def main(image_path: str, prompt: str = "car. person. bus. truck."):
+    from pathlib import Path
+    out = f"outputs/{Path(__file__).stem}.png"
     data = open(image_path, "rb").read()
-    open("det_out.png", "wb").write(detect_segment.remote(data, prompt))
-    print("wrote det_out.png")
+    open(out, "wb").write(detect_segment.remote(data, prompt))
+    print(f"wrote {out}")
 

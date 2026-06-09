@@ -82,7 +82,9 @@ def reskin(video_bytes: bytes, prompt: str, det_prompt: str) -> bytes:
 
 @app.local_entrypoint()
 def main(video_path: str, prompt: str = "cute cartoon toy vehicle, storybook illustration, hand-painted, vibrant", det_prompt: str = "car . van . truck . bus ."):
+    from pathlib import Path
+    out = f"outputs/{Path(__file__).stem}.mp4"
     data = open(video_path, "rb").read()
-    open("reskin_out.mp4", "wb").write(reskin.remote(data, prompt, det_prompt))
-    print("wrote reskin_out.mp4")
+    open(out, "wb").write(reskin.remote(data, prompt, det_prompt))
+    print(f"wrote {out}")
 

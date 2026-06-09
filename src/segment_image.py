@@ -35,7 +35,9 @@ def segment(img_bytes: bytes) -> bytes:
 
 @app.local_entrypoint()
 def main(image_path: str):
+    from pathlib import Path
+    out = f"outputs/{Path(__file__).stem}.png"
     data = open(image_path, "rb").read()
-    open("sam_out.png", "wb").write(segment.remote(data))
-    print("wrote sam_out.png")
+    open(out, "wb").write(segment.remote(data))
+    print(f"wrote {out}")
 

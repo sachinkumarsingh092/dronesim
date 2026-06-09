@@ -48,7 +48,9 @@ def cartoonize(video_bytes: bytes, prompt: str) -> bytes:
 
 @app.local_entrypoint()
 def main(video_path: str, prompt: str = "storybook cartoon illustration, whimsical enchanted village, vibrant hand-painted, studio ghibli style"):
+    from pathlib import Path
+    out = f"outputs/{Path(__file__).stem}.mp4"
     data = open(video_path, "rb").read()
-    open("cartoon_out.mp4", "wb").write(cartoonize.remote(data, prompt))
-    print("wrote cartoon_out.mp4")
+    open(out, "wb").write(cartoonize.remote(data, prompt))
+    print(f"wrote {out}")
 

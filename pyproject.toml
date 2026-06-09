@@ -1,7 +1,7 @@
 [project]
 name = "dronesim"
 version = "0.1.0"
-description = "Add your description here"
+description = "Re-skin drone footage into a storybook cartoon with GroundingDINO + SAM2 + Stable Diffusion/ControlNet, running GPU work on Modal."
 readme = "README.md"
 requires-python = ">=3.11, <3.13"
-dependencies = []
+dependencies = ["modal"]

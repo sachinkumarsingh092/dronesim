@@ -73,7 +73,9 @@ def track(video_bytes: bytes, prompt: str) -> bytes:
 
 @app.local_entrypoint()
 def main(video_path: str, prompt: str = "car . van . truck . bus . bicycle . person ."):
+    from pathlib import Path
+    out = f"outputs/{Path(__file__).stem}.mp4"
     data = open(video_path, "rb").read()
-    open("track_out.mp4", "wb").write(track.remote(data, prompt))
-    print("wrote track_out.mp4")
+    open(out, "wb").write(track.remote(data, prompt))
+    print(f"wrote {out}")
 
