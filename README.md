@@ -5,12 +5,10 @@ are detected, segmented, and re-painted with a diffusion model while the
 background is left untouched. All GPU work runs on [Modal](https://modal.com).
 
 **Stack:** YOLO + ByteTrack (detect/track) → FLUX.1 (cartoon vehicle assets) → SAM2 +
-median-plate inpaint (erase the originals) → TIPSv2 zero-shot road mask. (The earlier
-`reskin.py` uses GroundingDINO + SAM2 + ControlNet img2img instead.)
-
+median-plate inpaint (erase the originals) → TIPSv2 zero-shot road mask. 
 ## Input
 
-Raw drone footage (`data/clips/aerial_scene2.mp4`):
+Raw drone footage:
 
 ![input](assets/input.gif)
 
